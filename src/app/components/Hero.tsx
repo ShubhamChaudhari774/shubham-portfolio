@@ -1,33 +1,95 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Hero() {
-    return (
-      <section className="max-w-screen-xl mx-auto px-4 md:px-6 py-16 md:py-24">
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-6 py-16 md:py-24">
         <div className="grid md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-7">
-            <p className="text-sm uppercase tracking-wide text-gray-600">Software Engineer</p>
-            <h1 className="mt-2 text-3xl md:text-5xl font-bold text-gray-900">
+          <motion.div 
+            className="md:col-span-7"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.p 
+              className="text-sm uppercase tracking-wide text-blue-600 font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Software Engineer
+            </motion.p>
+            <motion.h1 
+              className="mt-2 text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               Shubham Chaudhari
-            </h1>
-            <p className="mt-4 text-gray-700 leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Detail-oriented Computer Science student (GPA 3.9+) with strong foundation in software engineering,
               web development, and problem-solving. Experienced tutor and mentor, improving outcomes through
               personalized strategies. Full‑stack skills in Python, JavaScript, React, Node.js, SQL, and MongoDB.
               Seeking internship opportunities to apply technical and collaborative skills.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="#projects" className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-2.5 hover:bg-black">
+            </motion.p>
+            <motion.div 
+              className="mt-6 flex flex-col sm:flex-row gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <motion.a 
+                href="#projects" 
+                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 View Projects
-              </a>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-md border border-gray-300 px-5 py-2.5 hover:bg-gray-50">
+              </motion.a>
+              <motion.a 
+                href="#contact" 
+                className="inline-flex items-center justify-center rounded-lg border-2 border-gray-300 px-6 py-3 font-medium hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Contact Me
-              </a>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            className="md:col-span-5"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="relative">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 border-2 border-dashed border-blue-300 dark:border-blue-600 grid place-content-center text-blue-600 dark:text-blue-300 shadow-lg">
+                <span className="text-sm font-medium">Your Photo</span>
+              </div>
+              <motion.div 
+                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
             </div>
-          </div>
-          <div className="md:col-span-5">
-            <div className="aspect-square rounded-xl border border-dashed border-gray-300 grid place-content-center text-gray-500">
-              <span className="text-sm">Your Photo</span>
-            </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
