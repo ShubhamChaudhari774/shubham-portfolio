@@ -33,14 +33,17 @@ export default function ParticleBackground() {
     // Animate particles
     const animate = () => {
       setParticles(prev => 
-        prev.map(particle => ({
-          ...particle,
-          x: particle.x + particle.speedX,
-          y: particle.y + particle.speedY,
-          // Wrap around screen
-          x: particle.x > window.innerWidth ? 0 : particle.x < 0 ? window.innerWidth : particle.x,
-          y: particle.y > window.innerHeight ? 0 : particle.y < 0 ? window.innerHeight : particle.y,
-        }))
+        prev.map(particle => {
+          const nextX = particle.x + particle.speedX;
+          const nextY = particle.y + particle.speedY;
+          const wrappedX = nextX > window.innerWidth ? 0 : nextX < 0 ? window.innerWidth : nextX;
+          const wrappedY = nextY > window.innerHeight ? 0 : nextY < 0 ? window.innerHeight : nextY;
+          return {
+            ...particle,
+            x: wrappedX,
+            y: wrappedY,
+          };
+        })
       );
     };
 
