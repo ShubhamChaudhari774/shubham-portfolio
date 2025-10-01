@@ -8,7 +8,6 @@ export default function Contact() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
     setStatus("sending");
     
     try {
@@ -55,7 +54,7 @@ export default function Contact() {
         >
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
-        {status === "sent" && <p className="text-green-700">Thanks! I'll get back to you soon.</p>}
+        {status === "sent" && <p className="text-green-700">Thanks! I&apos;ll get back to you soon.</p>}
         {status === "error" && <p className="text-red-700">Something went wrong. Try again.</p>}
       </form>
       

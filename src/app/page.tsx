@@ -11,7 +11,7 @@ export default function HomePage() {
       <main className="max-w-screen-xl mx-auto px-4 md:px-6 py-12">
         <h1 className="text-2xl font-semibold text-grey-900">Home</h1>
         <p className="mt-2 text-grey-600">
-          I'm a software engineer with a passion for building web applications.
+          I&apos;m a software engineer with a passion for building web applications.
         </p>
         <Hero />
         <About />
