@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -20,8 +18,9 @@ export async function POST(request: NextRequest) {
 
     const toEmail = process.env.CONTACT_TO_EMAIL;
     const fromEmail = process.env.CONTACT_FROM_EMAIL;
+    const apiKey = process.env.RESEND_API_KEY;
 
-    if (!toEmail || !fromEmail) {
+    if (!toEmail || !fromEmail || !apiKey) {
       return NextResponse.json({ error: 'Email env vars missing' }, { status: 500 });
     }
 
@@ -42,6 +41,8 @@ export async function POST(request: NextRequest) {
         </p>
       </div>
     `;
+
+    const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
       from: fromEmail,
