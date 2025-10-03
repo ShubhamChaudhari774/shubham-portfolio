@@ -22,7 +22,7 @@ export default function Hero() {
               Software Engineer
             </motion.p>
             <motion.h1 
-              className="mt-2 text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent"
+              className="mt-2 text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-blue-300 dark:via-purple-300 dark:to-pink-400 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -33,7 +33,7 @@ export default function Hero() {
               className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               Detail-oriented Computer Science student (GPA 3.9+) with strong foundation in software engineering,
               web development, and problem-solving. Experienced tutor and mentor, improving outcomes through
@@ -72,7 +72,10 @@ export default function Hero() {
           >
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 border-2 border-dashed border-blue-300 dark:border-blue-600 grid place-content-center text-blue-600 dark:text-blue-300 shadow-lg">
-                <span className="text-sm font-medium">Your Photo</span>
+                <img 
+                  src="/linkedin.png"
+                  alt="Your Photo" 
+                  className="aspect-square rounded-2xl w-full h-full object-cover shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600" />
               </div>
               <motion.div 
                 className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
