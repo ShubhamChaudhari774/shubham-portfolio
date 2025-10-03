@@ -59,7 +59,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ message: 'Message sent successfully!' }, { status: 200 });
   } catch (err) {
-    console.error('Contact form error:', err);
-    return NextResponse.json({ error: 'Failed to send message' }, { status: 500 });
+  console.error('Contact form error:', err);
+  const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+  return NextResponse.json({ 
+    error: 'Failed to send message',
+    details: errorMessage  // Add this
+  }, { status: 500 });
   }
 }
