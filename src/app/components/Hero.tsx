@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 border-2 border-dashed border-blue-300 dark:border-blue-600 grid place-content-center text-blue-600 dark:text-blue-300 shadow-lg">
                 <img 
-                  src="/linkedin.png"
+                  src="/Linkedin.png"
                   alt="Your Photo" 
                   className="aspect-square rounded-2xl w-full h-full object-cover shadow-lg border-2 border-dashed border-blue-300 dark:border-blue-600" />
               </div>
