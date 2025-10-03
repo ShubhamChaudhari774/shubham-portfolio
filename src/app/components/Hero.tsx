@@ -33,7 +33,7 @@ export default function Hero() {
               className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               Detail-oriented Computer Science student (GPA 3.9+) with strong foundation in software engineering,
               web development, and problem-solving. Experienced tutor and mentor, improving outcomes through
