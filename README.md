@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [shubham-portfolio](shubham-portfolio-oisa-git-main-shubhamchaudhari774s-projects.vercel.app) with your browser to see the result.
+Open [shubham-portfolio](https://shubham-portfolio-sage-sigma.vercel.app/) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
