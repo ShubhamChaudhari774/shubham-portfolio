@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+export const runtime = "nodejs";
+
 export async function POST(request: NextRequest) {
+  console.log("Env check:", {
+  hasKey: !!process.env.RESEND_API_KEY,
+  to: process.env.CONTACT_TO_EMAIL,
+  from: process.env.CONTACT_FROM_EMAIL,
+  });
   try {
     const body = await request.json();
     const { name, email, message } = body || {};
